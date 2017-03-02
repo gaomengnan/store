@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta charset="utf-8">
+    <title>One</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/anmination.css">
+    <link rel="stylesheet" href="js/creative.js">
+    <!-- 轮播图-->
+    <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+    <link type="text/css" rel="stylesheet" href="css/posterTvGrid.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+
+    <style>
+        body{
+            background-color: #eee;
+            color:#333;
+        }
+        /*@-webkit-keyframes fadeinL {*/
+            /*0%{opacity: 0;transform:translateX(-100px)}*/
+            /*100%{opacity: 1;transform: translateX(0)}*/
+        /*}*/
+
+        /*@keyframes fadeinL{*/
+            /*0%{opacity:0;transform:translateX(-100px);}*/
+            /*100%{opacity:1;transform:translateX(0);}*/
+        /*}*/
+        .navbar-default{
+            background-image: linear-gradient(89deg, #f5f5f5 0, #f5f5f5 100%);
+            background-color: white;
+        }
+
+        .navbar-default .navbar-brand{
+            color: black;
+        }
+
+        .navbar-default .navbar-nav>li>a{
+            color: black;
+        }
+        .navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{
+            color: black;
+            background-color:transparent;
+            text-shadow: 1px 1px 1px #ccc;
+        }
+
+        .navbar{
+            min-height: 50px;
+            margin-bottom: 20px;
+        }
+        .navbar-brand{
+            font-size: 24px;
+            line-height: 20px;
+            height: 60px;
+        }
+
+        .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{
+            color: black;
+            background-color:transparent;
+            text-shadow: 1px 1px 1px #ccc;
+        }
+        .container{
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 0 5px;
+
+        }
+        #main .posts{
+            margin: 0 330px 26px 0;
+            top: 20px;
+
+        }
+        /*.a-fadeinL{*/
+            /*animation-name: fadeinL;*/
+            /*-webkit-animation-name:fadeinL ;*/
+
+        /*}*/
+        /*.a-fadeinL{*/
+            /*animation: 1s ease-out backwards;*/
+            /*-webkit-animation: 1s ease-out backwards ;*/
+        /*}*/
+        .block{
+            position: relative;
+            overflow: hidden;
+            background: #fcfcfa;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        }
+
+        #main .post{
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .sidebar{
+            position:absolute;
+            right: 0;
+            top: 20px;
+        }
+        .sidebar .widget{
+            margin-bottom: 20px;
+            width: 300px;
+            background: #fff;
+        }
+        .sidebar .wc{
+            padding: 10px;
+        }
+        .sidebar .wt{
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+            line-height: 1.2em;
+        }
+
+        .fixed{
+            position: fixed;
+            top:0;
+            width: 100%;
+            margin: 0 auto;
+            left: 0;
+            /*border-bottom: 2px solid #113f6c;*/
+            z-index: 1000;
+        }
+        .item img{
+            margin:0 auto;
+        }
+        .carousel-inner{
+            /*background-image: linear-gradient(89deg, #fef7df 0, #f0ad4e 100%);*/
+        }
+
+        .carousel{
+            top:80px;
+        }
+        .main_banner_wrap{
+            top: 10px;
+        }
+
+       .htmleaf-container{
+            padding-top:20px;
+       }
+
+    </style>
+
+
+</head>
+<body>
+
+<nav id="mainNav" class="navbar navbar-default fixed">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" title="Haorooms">
+                  <span class="logo">
+                      \(^o^)/~
+                  </span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-collapse-nav" style="height:0px;">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a  class="page-scroll" href="/">首页</a></li>
+                <li><a class="page-scroll" href="/archives">优酷</a></li>
+                <li><a class="page-scroll" href="/about" target="_blank">爱奇艺</a></li>
+                <li><a class="page-scroll" href="/nav">腾讯</a></li>
+                <!--<li><a class="page-scroll" href="http://resource.haorooms.com/" target="_blank">前端资料库</a></li>-->
+                <li><a class="page-scroll" href="/tools/index">下载</a></li>
+                <!--<li><a href="/page/guanggaohz">合作</a></li>-->
+                <!-- <li class="tuijian"><a href="http://www.maiziedu.com/pages/yy1605/web.html?yy=haorooms" target="_blank" rel="nofollow">前端课程</a></li> --><!--加推荐tuijian -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+  <!--轮播图部分-->
+<div class="htmleaf-container">
+    <div class="htmleaf-content">
+        <div id="posterTvGrid" style="margin:40px auto 0 auto;"></div>
+    </div>
+</div>
+
+
+
+<section id="main" class="container">
+    <section class="posts block a-fadeinL">
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>  <article class="post block">
+        <h2>标题</h2>
+    </article>
+        <article class="post block">
+            <h2>标题</h2>
+        </article>  <article class="post block">
+        <h2>标题</h2>
+    </article>
+
+
+
+    </section>
+
+    <div></div>
+    <div class="sidebar">
+        <div class="block a-fadeinR">
+            <div class="widget about">
+                <strong class="wt">关于haorooms博客</strong>
+                <div class="wc">
+                    haorooms博客，是Aaron个人技术博客，主要记录和总结前端工作中常用的知识及我的生活。
+                    订阅博客文章，请关注下方微信号，后期会通过订阅号将文章发送到您的手机上。
+                    本博客所有内容若需转载请联系我。
+
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="block a-fadeinR">
+            <div class="widget about">
+                <strong class="wt">关于haorooms博客</strong>
+            </div>
+            <div></div>
+        </div>
+        <div class="block a-fadeinR">
+            <div class="widget about">
+                <strong class="wt">关于haorooms博客</strong>
+
+            </div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer"></footer>
+
+</body>
+
+<script type="text/javascript" src="js/posterTvGrid.js"></script>
+<script type="text/javascript">
+    var variable = {{data|tojson}};
+    var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
+</script>
+
+</html>
