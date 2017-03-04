@@ -2,10 +2,16 @@
 from flask import Flask,render_template
 from http import bannerController
 import json
+import redis
 application = Flask(__name__)
 @application.route("/")
 def index():
-	resp = banner()
+	r = redis.Redis()
+	resp = r.get("banner")
+	if not resp:
+		resp = banner()
+	else:
+		resp  = r.get("banner")
 	return render_template('main.html',data=resp)
 @application.route("/main")
 def main():
