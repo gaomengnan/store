@@ -28,7 +28,7 @@ def cawler():
 
 if __name__ == "__main__":
     import sys,time
-    sys.stdout.write("开始任务 [%s]\r\n" %(time.strftime(time.localtime(time.time()))))
+    sys.stdout.write("开始任务 [%s]\r\n" %(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))))
     resp = cawler()
 
 
