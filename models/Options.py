@@ -1,6 +1,6 @@
 # from models import
 from sqlalchemy import Column, Integer
-from models import dbBase
+from models import dbBase,dbSession,relationships
 class Options(dbBase):
 
     __tablename__ = "options"
