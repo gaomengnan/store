@@ -5,8 +5,9 @@ sys.path.append(os.path.split(os.path.realpath(__file__))[0])
 import requests
 
 import re
-from db import db
-
+# from db import db
+from models import Options
+from models.Options import dbSession
 import time
 class crawlerBanner():
 	
@@ -33,9 +34,8 @@ class crawlerBanner():
 		self.banner =  v
 	def save(self):
 		
-		d = db.DB()
-		d.query("update options set option_value='"+ self.banner+"' where option_name='banner'")
-		d.commit()
+		Options.Options.query.filter(Options.Options.option_name == "banner").update({"option_value":self.banner})
+		dbSession.commit()
 
 if __name__ == "__main__":
 
