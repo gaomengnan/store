@@ -1,3 +1,4 @@
+#coding=utf-8
 from models import Posts
 from models.Posts import dbSession
 
@@ -26,6 +27,9 @@ def cawler():
 
 
 if __name__ == "__main__":
+    import sys,time
+    sys.stdout.write("开始任务 [%s]\r\n" %(time.strftime(time.localtime(time.time()))))
     resp = cawler()
+
 
 
