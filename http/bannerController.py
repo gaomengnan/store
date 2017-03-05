@@ -1,14 +1,7 @@
-from db import db
-
-
-
+from models import Options
 class bannerController():
 
 
 	def getBanner(self):
-		d = db.DB()
-		sql = "select * from options where option_name='banner'"
-		d.query(sql)
-		resp = d.fetchOne()
-		id,name,value = resp
-		return value
+		options = Options.Options.query.filter(Options.Options.option_name=='banner').first()
+		return options.option_value
