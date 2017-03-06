@@ -10,7 +10,8 @@ application = Flask(__name__)
 @application.route("/")
 def index():
     resp = banner()
-    return render_template('main.html', data=resp)
+    posts = getposts(1,10)
+    return render_template('main.html', data=resp,posts=posts)
 
 
 @application.route("/main")
@@ -28,9 +29,12 @@ def banner():
 
     return json.loads(resp)
 
-def getposts():
+def getposts(page,pagesize):
+    from http import postController
+    __list__ = []
+    resp = postController.postController().getpost(page,pagesize)
 
-    pass
+    return resp
 
 
 if __name__ == "__main__":

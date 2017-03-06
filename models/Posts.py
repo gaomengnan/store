@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer,String
 from models import dbBase,dbSession,relationships
-
 class Posts(dbBase):
 
     __tablename__ = "posts"
@@ -17,4 +16,7 @@ class Posts(dbBase):
 
     def __repr__(self):
         return '<Posts %r>' % self.title
+
+
+
 

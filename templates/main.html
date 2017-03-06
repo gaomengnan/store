@@ -235,11 +235,14 @@
 <section id="main" class="container">
     <section class="posts block a-fadeinL">
 
+
+        {% for post in posts %}
+
         <article id="124449" class="post block">
 
-    <a target="_blank" href="http://www.jammyfm.com/124449" title="那些只知道埋头创作、玩命排练的音乐人活该火不起来？嗯，活该。" class="index-img">
+    <a target="_blank" href="http://www.jammyfm.com/124449" title="{{post.title}}" class="index-img">
 
-        <img src="http://img.jammyfm.com/wordpress/wp-content/uploads/2017/03/201703041041076628-336x224.jpg" alt="那些只知道埋头创作、玩命排练的音乐人活该火不起来？嗯，活该。">
+        <img src={{post.cover}} alt="{{post.title}}">
         <span class="video-time">
                         </span>
 
@@ -247,13 +250,14 @@
 
     <div class="index-text">
         <!--<h3>-->
-            <a target="_blank" href="http://www.jammyfm.com/124449" title="那些只知道埋头创作、玩命排练的音乐人活该火不起来？嗯，活该。" _hover-ignore="1">那些只知道埋头创作、玩命排练的音乐人活该火不起来？嗯，活该。</a>
+            <a target="_blank" href="http://www.jammyfm.com/124449" title="那些只知道埋头创作、玩命排练的音乐人活该火不起来？嗯，活该。" _hover-ignore="1">{{post.title}}</a>
         <!--</h3>-->
 
 
     </div>
 
 </article>
+        {% endfor %}
 
         <!--<article class="post block">-->
             <!--<a>-->
