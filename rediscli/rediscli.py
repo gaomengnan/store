@@ -1,7 +1,7 @@
 import redis
 
 
-class redisObj():
+class rediscli():
 
     redis_conn = None
 

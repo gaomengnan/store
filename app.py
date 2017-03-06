@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 from http import bannerController
 import json
-import redisConnect.redisObj
+import rediscli.rediscli
 
 application = Flask(__name__)
 
@@ -19,7 +19,7 @@ def main():
 
 
 def banner():
-    r = redisConnect.redisObj.redisObj()
+    r = rediscli.rediscli.rediscli()
     resp = r.get("banner")
     if not resp:
         b = bannerController.bannerController()
@@ -27,6 +27,10 @@ def banner():
         r.set("banner", resp)
 
     return json.loads(resp)
+
+def getposts():
+
+    pass
 
 
 if __name__ == "__main__":
