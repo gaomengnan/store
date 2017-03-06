@@ -187,6 +187,15 @@
             -webkit-transition:all 0.5s linear;
 
         }
+        .index-bottom{
+               position:absolute;
+               right:0;
+               bottom:6px;
+               width:100%;
+               height:25px;
+               line-height:25px;
+               color:#f3c37c
+        }
     </style>
 
 
@@ -240,7 +249,7 @@
 
         <article id="124449" class="post block">
 
-    <a target="_blank" href="http://www.jammyfm.com/124449" title="{{post.title}}" class="index-img">
+    <a target="_blank" href="{{post.link}}" title="{{post.title}}" class="index-img">
 
         <img src={{post.cover}} alt="{{post.title}}">
         <span class="video-time">
@@ -250,35 +259,19 @@
 
     <div class="index-text">
         <!--<h3>-->
-            <a target="_blank" href="http://www.jammyfm.com/124449" title="那些只知道埋头创作、玩命排练的音乐人活该火不起来？嗯，活该。" _hover-ignore="1">{{post.title}}</a>
+            <a target="_blank" href="{{post.link}}" title="{{post.title}}" _hover-ignore="1">{{post.title}}</a>
         <!--</h3>-->
+         <div class="index-bottom">
 
+                <h5>{{post.source}}</h5>
 
+            </div>
     </div>
+
+
 
 </article>
         {% endfor %}
-
-        <!--<article class="post block">-->
-            <!--<a>-->
-                <!--<img>-->
-            <!--</a>-->
-            <!--<div>-->
-                <!--<h4></h4>-->
-                <!--<div></div>-->
-                <!--<div></div>-->
-            <!--</div>-->
-        <!--</article>-->
-        <!--<article class="post block">-->
-            <!--<h2>标题</h2>-->
-        <!--</article>-->
-         <!--<article class="post block">-->
-            <!--<h2>标题</h2><span>最新</span>-->
-        <!--</article>-->
-
-
-
-
 
     </section>
 

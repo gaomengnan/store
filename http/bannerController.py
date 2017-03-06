@@ -3,6 +3,4 @@ from models.Options import dbSession
 class bannerController():
     def getBanner(self):
         options = Options.Options.query.filter(Options.Options.option_name == 'banner').first()
-        session = dbSession()
-        session.close()
         return options.option_value

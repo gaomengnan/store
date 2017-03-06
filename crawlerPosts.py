@@ -11,13 +11,16 @@ def cawler():
     soup =  BeautifulSoup(resp.text,"html5lib")
     div = soup.find(id="m_86988")
     cols = div.findAll("div",attrs={"class":"yk-col4"})
+
     for col in cols:
         # print col
+        link = col.find("div",attrs={"class":"v-link"}).a['href']
+        # print link
         cover = col.div.div.img["_src"]
         title = col.find("div",attrs={"class":"v-meta-title"}).text
         has = Posts.Posts.query.filter(Posts.Posts.title == title).first()
         if not has:
-            new_data = Posts.Posts(title,cover,"优酷",time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
+            new_data = Posts.Posts(title,cover,"优酷",time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())),link)
             dbSession.add(new_data)
             dbSession.commit()
             dbSession.close()

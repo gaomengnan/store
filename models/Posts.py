@@ -9,8 +9,9 @@ class Posts(dbBase):
     cover = Column(String(256))
     source = Column(String(100))
     created_at = Column()
+    link = Column()
 
-    def __init__(self,title,cover,source,created_at):
+    def __init__(self,title,cover,source,created_at,link):
 
         self.title = title
 
@@ -19,6 +20,8 @@ class Posts(dbBase):
         self.source = source
 
         self.created_at = created_at
+
+        self.link = link
 
     def __repr__(self):
         return '<Posts %r>' % self.title
