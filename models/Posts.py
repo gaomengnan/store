@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer,String
 from models import dbBase,dbSession,relationships
 class Posts(dbBase):
 
-    __tablename__ = "posts"
+    __tablename__ = "movies"
 
     id = Column(Integer, primary_key=True)
     title = Column(String(126))
