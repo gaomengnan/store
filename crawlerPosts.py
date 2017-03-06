@@ -15,11 +15,9 @@ def cawler():
         # print col
         cover = col.div.div.img["_src"]
         title = col.find("div",attrs={"class":"v-meta-title"}).text
-
-
         has = Posts.Posts.query.filter(Posts.Posts.title == title).first()
         if not has:
-            new_data = Posts.Posts(title,cover)
+            new_data = Posts.Posts(title,cover,"优酷",time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
             dbSession.add(new_data)
             dbSession.commit()
             dbSession.close()
