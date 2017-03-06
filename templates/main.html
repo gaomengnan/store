@@ -17,7 +17,7 @@
     <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/main.js"></script>
     <script type="text/javascript" src="static/js/jquery-1.11.0.js"></script>
-
+    <script src="static/js/jquery.lazyload.min.js?v=1.9.1"></script>
     <style>
         body{
             background-color: #eee;
@@ -251,7 +251,7 @@
 
     <a target="_blank" href="{{post.link}}" title="{{post.title}}" class="index-img">
 
-        <img src={{post.cover}} alt="{{post.title}}">
+        <img class="lazy"  data-original={{post.cover}} alt="{{post.title}}">
         <span class="video-time">
                         </span>
 
@@ -360,8 +360,10 @@
 
 <script type="text/javascript" src="static/js/posterTvGrid.js"></script>
 <script type="text/javascript">
-    var variable = {{data|tojson}};
-    var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
+        var variable = {{data|tojson}};
+        var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
+        $("img.lazy").lazyload({effect: "fadeIn"});
+
 </script>
 
 </html>
