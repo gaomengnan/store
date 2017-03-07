@@ -18,6 +18,6 @@ if __name__ == "__main__":
 
     resp = postController().getpost(1,10)
     for i in resp:
-        print i.cover
+        print i.created_at
 
 

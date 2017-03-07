@@ -13,8 +13,7 @@ dba = SQLAlchemy(application)
 dbSession = dba.session
 @application.route("/")
 def index():
-    from models import movies
-    posts = movies.movies.query.all()
+    posts = getposts(1,10)
     resp = banner()
     # posts = getposts(1,10)
     return render_template('main.html', data=resp,posts=posts)
