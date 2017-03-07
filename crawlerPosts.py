@@ -1,11 +1,14 @@
 #coding=utf-8
 from models import Posts
 from models.Posts import dbSession
-
+import click
 import requests
 from bs4 import BeautifulSoup
+import time,sys
 
-def cawler():
+
+
+def crawler():
     resp = requests.get("http://movie.youku.com/?spm=a2hww.20023042.topNav.5~1~3!3~A")
     resp.encoding="utf-8"
     soup =  BeautifulSoup(resp.text,"html5lib")
@@ -26,11 +29,21 @@ def cawler():
             dbSession.close()
 
 
+nameMap = {
+    'youku':crawler()
+}
+
+@click.command()
+@click.option("--source",default=None,help="type [youku,aiqiyi.eg]")
+def main(source):
+    func = nameMap.get(source,None)
+    if func:
+        sys.stdout.write("开始任务 [%s] -- souce[%s]\r\n" %(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))),source)
+        func()
 
 if __name__ == "__main__":
-    import sys,time
-    sys.stdout.write("开始任务 [%s]\r\n" %(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))))
-    resp = cawler()
+    main()
+
 
 
 
