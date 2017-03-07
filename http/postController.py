@@ -1,4 +1,4 @@
-from models import Posts,dbSession
+from models import movies
 class postController():
 
     def __init__(self):
@@ -8,8 +8,7 @@ class postController():
 
     def getpost(self,page,pagesize):
         offset = (page  -1 ) *pagesize
-        resp = Posts.Posts.query.order_by(Posts.Posts.created_at.desc()).offset(offset).limit(pagesize).all()
-        dbSession().commit()
+        resp = movies.movies.query.order_by(movies.movies.created_at.desc()).offset(offset).limit(pagesize).all()
         # dbSession().close()
         return resp
 

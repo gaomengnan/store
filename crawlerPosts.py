@@ -1,6 +1,5 @@
 #coding=utf-8
-from models import Posts
-from models.Posts import dbSession
+from models import movies,dbSession
 import click
 import requests
 from bs4 import BeautifulSoup
@@ -24,9 +23,9 @@ def crawler():
             # print link
             cover = is_hover.div.img["_src"]
             title = is_hover.find("div",attrs={"class":"v-meta-title"}).text
-            has = Posts.Posts.query.filter(Posts.Posts.title == title).first()
+            has = movies.movies.query.filter(movies.movies.title == title).first()
             if not has:
-                new_data = Posts.Posts(title,cover,"优酷",time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())),link,"院线热映")
+                new_data = movies.movies(title,cover,"优酷",time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())),link,"院线热映")
                 dbSession.add(new_data)
                 dbSession.commit()
                 dbSession.close()

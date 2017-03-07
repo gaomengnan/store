@@ -3,14 +3,20 @@ from flask import Flask, render_template
 from http import bannerController
 import json
 import rediscli.rediscli
+from flask_sqlalchemy import SQLAlchemy
 
 application = Flask(__name__)
-
-
+# app = Flask(__name__)
+application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost:3306/app?charset=utf8'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+dba = SQLAlchemy(application)
+dbSession = dba.session
 @application.route("/")
 def index():
+    from models import movies
+    posts = movies.movies.query.all()
     resp = banner()
-    posts = getposts(1,10)
+    # posts = getposts(1,10)
     return render_template('main.html', data=resp,posts=posts)
 
 
