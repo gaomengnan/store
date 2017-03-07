@@ -9,6 +9,7 @@ import time,sys
 
 
 def crawler():
+    print "开始任务 [%s] -- \r\n" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time())))
     resp = requests.get("http://movie.youku.com/?spm=a2hww.20023042.topNav.5~1~3!3~A")
     resp.encoding="utf-8"
     soup =  BeautifulSoup(resp.text,"html5lib")
@@ -38,7 +39,6 @@ nameMap = {
 def main(source):
     func = nameMap.get(source,None)
     if func:
-        sys.stdout.write("开始任务 [%s] -- souce[%s]\r\n" %(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))),source)
         func()
 
 if __name__ == "__main__":
