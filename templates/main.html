@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}首页{% endblock %}
 {% block head %}
+
   {{ super() }}
 {% endblock %}
 {% block content %}
@@ -14,7 +15,7 @@
             </button>
             <a class="navbar-brand" href="/" title="Haorooms">
                   <span class="logo">
-                      \(^o^)/~
+                      首页
                   </span>
             </a>
         </div>
@@ -135,9 +136,8 @@
     {{super()}}
 {% endblock %}
 
-<script type="text/javascript">
-        var variable = {{data|tojson}};
-        var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
-        $("img.lazy").lazyload({effect: "fadeIn"});
-
-</script>
+{% block js%}
+    var variable = {{data|tojson}};
+    var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
+    $("img.lazy").lazyload({effect: "fadeIn"});
+{% endblock %}
