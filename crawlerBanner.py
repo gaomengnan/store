@@ -33,7 +33,7 @@ class crawlerBanner():
 		sys.stdout.write("[%s] banner?%s?\r\n"%(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())),v))
 		self.banner =  v
 	def save(self):
-		
+
 		Options.Options.query.filter(Options.Options.option_name == "banner").update({"option_value":self.banner})
 		dbSession.commit()
 
