@@ -1,8 +1,26 @@
 {% extends "layout.html" %}
 {% block title %}首页{% endblock %}
 {% block head %}
-
   {{ super() }}
+    <style>
+        .index-meta{
+            float:left
+        }
+        .index-meta2{
+            float:left;
+            margin-left:25px
+        }
+        .source{
+            color:#ab9166;
+            font-size:14px!important
+        }
+        .meta{
+            color:#8db97a;
+            font-size:14px!important;
+            font-family:cursive
+        }
+    </style>
+}
 {% endblock %}
 {% block content %}
  <nav id="mainNav" class="navbar navbar-default fixed">
@@ -65,8 +83,15 @@
             <a target="_blank" href="{{post.link}}" title="{{post.title}}" _hover-ignore="1">{{post.title}}</a>
         <!--</h3>-->
          <div class="index-bottom">
+            <div class="index-meta">
+              <a class="source">{{post.source}}</a>
 
-                <h5>{{post.source}}</h5>
+            </div>
+             <div class="index-meta2">
+
+                 <a class="meta">{{post.meta}}</a>
+             </div>
+
 
             </div>
     </div>

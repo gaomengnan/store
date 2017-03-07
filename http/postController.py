@@ -8,7 +8,7 @@ class postController():
 
     def getpost(self,page,pagesize):
         offset = (page  -1 ) *pagesize
-        resp = Posts.Posts.query.offset(offset).limit(pagesize).all()
+        resp = Posts.Posts.query.order_by(Posts.Posts.created_at.desc()).offset(offset).limit(pagesize).all()
         dbSession().commit()
         # dbSession().close()
         return resp
