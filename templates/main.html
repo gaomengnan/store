@@ -342,7 +342,7 @@
 
 </section>
 
-<div id="app1"></div>
+<div id="app"></div>
 {% endblock %}
 {% block footer %}
     {{super()}}
@@ -351,6 +351,7 @@
 {% block js%}
 <script>
     var variable = {{data|tojson}};
+    var posts = 1;
     var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
     $("img.lazy").lazyload({effect: "fadeIn"});
 </script>

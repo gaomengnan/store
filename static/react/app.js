@@ -12,3 +12,4 @@ const routes = (
   </Router>
 );
 
+ReactDOM.render(routes, document.getElementById('app'));
