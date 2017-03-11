@@ -236,7 +236,6 @@
 
         }
     </style>
-}
 {% endblock %}
 {% block content %}
  <nav id="mainNav" class="navbar navbar-default fixed">
@@ -342,13 +341,20 @@
 
 
 </section>
+
+<div id="app"></div>
 {% endblock %}
 {% block footer %}
     {{super()}}
 {% endblock %}
 
 {% block js%}
+<script>
     var variable = {{data|tojson}};
     var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},variable);
     $("img.lazy").lazyload({effect: "fadeIn"});
+</script>
+<script src="static/react/build/bundle.min.js">
+
+</script>
 {% endblock %}
