@@ -38,8 +38,18 @@ def getposts(page,pagesize):
     from http import postController
     __list__ = []
     resp = postController.postController().getpost(page,pagesize)
+    for item in resp:
+        __list__.append({
+            'title':item.title,
+            'cover':item.cover,
+            'link':item.link,
+            'meta':item.meta,
+            'source':item.source
 
-    return resp
+        })
+
+
+    return __list__
 
 
 if __name__ == "__main__":

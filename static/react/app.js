@@ -3,7 +3,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Todo from "./components/Todo"
 import ReactDOM from 'react-dom';
 import React from 'react';
-
+import {index_api} from "./config/api"
 const history = createBrowserHistory()
 
 const routes = (
