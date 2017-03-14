@@ -1,0 +1,7 @@
+click==6.7
+Flask==0.12
+Flask_SQLAlchemy==2.2
+redis==2.10.5
+requests==2.13.0
+SQLAlchemy==1.1.6
+beautifulsoup4==4.5.3
